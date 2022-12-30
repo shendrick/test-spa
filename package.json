@@ -18,7 +18,6 @@
     "workbox-routing": "^6.5.4",
     "workbox-strategies": "^6.5.4"
   },
-  "homepage": "https://shendrick.github.io/test-spa/",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
