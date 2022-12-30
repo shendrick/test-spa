@@ -7,10 +7,11 @@ import {
 } from "@tanstack/react-router";
 
 const rootRoute = createRouteConfig({
+  // path: "test-spa",
   component: () => (
     <>
       <div>
-        <Link to="/">Home</Link> <Link to="/about">About</Link>
+        <Link to="/test-spa">Home</Link> <Link to="/test-spa/about">About</Link>
       </div>
       <hr />
       <Outlet />
@@ -20,15 +21,27 @@ const rootRoute = createRouteConfig({
 
 const indexRoute = rootRoute.createRoute({
   path: "/",
-  component: Index,
+  // component: Index,
 });
 
-const aboutRoute = rootRoute.createRoute({
+const baseRoute = rootRoute.createRoute({
+  path: "/test-spa",
+  // component: Index,
+});
+
+const baseIndexRoute = baseRoute.createRoute({
+  path: "/",
+  component: Index,
+});
+const baseAboutRoute = baseRoute.createRoute({
   path: "/about",
   component: About,
 });
 
-const routeConfig = rootRoute.addChildren([indexRoute, aboutRoute]);
+const routeConfig = rootRoute.addChildren([
+  indexRoute,
+  baseRoute.addChildren([baseIndexRoute, baseAboutRoute]),
+]);
 
 const router = createReactRouter({ routeConfig });
 
@@ -39,13 +52,13 @@ function App() {
 function Index() {
   return (
     <div>
-      <h3>Welcome Home!</h3>
+      <h3>Welcome Home1!</h3>
     </div>
   );
 }
 
 function About() {
-  return <div>Hello from About!</div>;
+  return <div>Hello from About2!</div>;
 }
 
 export default App;
