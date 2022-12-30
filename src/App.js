@@ -40,13 +40,13 @@ function App() {
 function Index() {
   return (
     <div>
-      <h3>Welcome Home1!</h3>
+      <h3>Welcome Home!</h3>
     </div>
   );
 }
 
 function About() {
-  return <div>Hello from About2!</div>;
+  return <div>Hello from About!</div>;
 }
 
 export default App;
