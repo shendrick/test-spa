@@ -24,7 +24,7 @@ const indexRoute = rootRoute.createRoute({
   component: Index,
 });
 
-const aboutRoute = baseRoute.createRoute({
+const aboutRoute = rootRoute.createRoute({
   path: "/about",
   component: About,
 });
