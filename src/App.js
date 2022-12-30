@@ -11,7 +11,8 @@ const rootRoute = createRouteConfig({
   component: () => (
     <>
       <div>
-        <Link to="/test-spa">Home</Link> <Link to="/test-spa/about">About</Link>
+        <Link to="/test-spa/">Home</Link>{" "}
+        <Link to="/test-spa/about">About</Link>
       </div>
       <hr />
       <Outlet />
@@ -25,7 +26,7 @@ const indexRoute = rootRoute.createRoute({
 });
 
 const baseRoute = rootRoute.createRoute({
-  path: "/test-spa",
+  path: "/test-spa/",
   // component: Index,
 });
 
