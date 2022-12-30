@@ -7,7 +7,12 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "gh-pages": "^4.0.0",
+    "browser-fs-access": "^0.31.1",
+    "env-cmd": "^10.1.0",
+    "https-localhost": "^4.7.1",
+    "liquorstore": "^0.3.2",
+    "localforage": "^1.10.0",
+    "lodash": "^4.17.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
@@ -24,7 +29,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "serve": "npm run build && env-cmd serve build",
+    "serve:reinstall": "npm run build && REINSTALL=true env-cmd serve build"
   },
   "eslintConfig": {
     "extends": [
@@ -43,5 +50,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "preval.macro": "^5.0.0"
   }
 }

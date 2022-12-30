@@ -62,19 +62,19 @@ function registerValidSW(swUrl, config) {
       // Check for updates at start.
       registration.update();
       // Check for updates every 5 min.
-      setInterval(() => {
-        registration.update();
-        console.debug("Checked for update...");
-      }, 1000 * 60 * 1);
+      //   setInterval(() => {
+      //     registration.update();
+      //     console.debug("Checked for update...");
+      //   }, 1000 * 60 * 1);
 
-      if (navigator.vendor === "Apple Computer, Inc.") {
-        console.log("Safari!!!!");
-        if (registration.waiting) {
-          if (config && config.onUpdate) {
-            config.onUpdate(registration);
-          }
+      //   if (navigator.vendor === "Apple Computer, Inc.") {
+      //     console.log("Safari!!!!");
+      if (registration.waiting) {
+        if (config && config.onUpdate) {
+          config.onUpdate(registration);
         }
       }
+      //   }
 
       registration.onupdatefound = () => {
         const installingWorker = registration.installing;
@@ -146,10 +146,12 @@ function checkValidServiceWorker(swUrl, config) {
     });
 }
 
-export function forceSWupdate() {
+export function forceSWupdate(callback) {
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker.ready.then((registration) => {
-      registration.update().then(() => {});
+      registration.update().then((ev) => {
+        callback && callback(ev);
+      });
     });
   }
 }
