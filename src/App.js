@@ -27,7 +27,7 @@ const indexRoute = rootRoute.createRoute({
 
 const baseRoute = rootRoute.createRoute({
   path: "/test-spa/",
-  // component: Index,
+  component: Index,
 });
 
 const baseIndexRoute = baseRoute.createRoute({
