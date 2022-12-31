@@ -88,7 +88,7 @@ const Controls = () => {
         extensions: [".json"],
       });
       //   setHasStored(false);
-      window.location.reload();
+      // window.location.reload();
     });
   };
 
