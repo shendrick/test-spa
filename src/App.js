@@ -149,7 +149,7 @@ const Banner = () => {
   };
   const reloadPage = () => {
     waitingWorker?.postMessage({ type: "SKIP_WAITING" });
-    setShowReload(false);
+    // setShowReload(false);
     window.location.reload(true);
   };
 
