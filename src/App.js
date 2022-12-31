@@ -10,12 +10,7 @@ import { useCallback, useEffect, useState } from "react";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 
 import preval from "preval.macro";
-import {
-  storeContext,
-  useDataLoader,
-  useStoreContext,
-  useStoreInitializer,
-} from "./store";
+import { storeContext, useDataLoader, useStoreContext } from "./store";
 import localforage from "localforage";
 import _get from "lodash/get";
 import _set from "lodash/set";
@@ -126,7 +121,7 @@ const Controls = () => {
 
 const rootRoute = createRouteConfig({
   component: () => (
-    <>
+    <div>
       <Banner />
       <Controls />
       <div>
@@ -134,7 +129,7 @@ const rootRoute = createRouteConfig({
       </div>
       <hr />
       <Outlet />
-    </>
+    </div>
   ),
 });
 
@@ -367,6 +362,7 @@ function About() {
     <div>
       <label>Test: </label>
       <input
+        style={{ fontSize: "16px" }}
         type="text"
         onBlur={handleInputBlur}
         onChange={handleInputChange}
